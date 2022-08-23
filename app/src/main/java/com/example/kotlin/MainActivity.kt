@@ -12,13 +12,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         //leccion 1
-        variablesYConstantes()//llamar a la clase que creamos
+        variablesYConstantes()//llamar a la clase que creamos   -Linea 26
         //lecion 2
-        tiposDeDatos()//llamar a la clase que creamos
+        tiposDeDatos()//llamar a la clase que creamos           -Linea 80
         //leccion 3
-        sentenciasIF_1de2()//llamar a la clase que creamos
+        sentenciasIF_1de2()//llamar a la clase que creamos      -Linea 144
         //leccion 4
-        sentenciasIF_2de2()//llamar a la clase que creamos
+        sentenciasIF_2de2()//llamar a la clase que creamos      -Linea 190
+        //leccion 5
+        sentenciaWhen()//llamar a la clase que creamos          -Linea 259
     }
     //Aqui hablaremos de variables y constantes
     private fun variablesYConstantes(){
@@ -251,5 +253,85 @@ class MainActivity : AppCompatActivity() {
             //se imprimira
             println("Ninguno de los dos son iguales o uno no es igual")
         }
+    }
+
+    //Aqui hablaremos de la sentencia When
+    private fun sentenciaWhen(){
+        val pais:String="Peru"
+        /*
+            When con String
+            nos permitira evaluar varios tipos de datos
+         */
+        //------------------Ejemplo con String----------------
+        when(pais)
+        {
+            "Peru"->//si pais coincide con el datoPeru
+            {
+                //se imprimira
+                println("Si es peru,peruano")
+            }
+            "España"->//si pais coincide con el dato españa
+            {
+                //se imprimira
+                println("Si es españa, Español")
+            }
+            else->//de lo contrario
+            {
+                //se imprimira
+                println("no se conoce el pais")
+            }
+        }
+        //-------------------Ejemplo 2 String ----------------
+        //manera mas corta para el when
+        when(pais) {
+            "Peru","España","Brasil","Argentina","Uruguay" ->
+            {
+                //se imprimira
+                println("Si es un pais")
+            }
+            else->//de lo contrario
+            {
+                //se imprimira
+                println("El pais no se reconoce")
+            }
+        }
+
+        //-----------------Ejemplo 1 Int sin rangos------------------
+        val entero:Int=8
+        when(entero)
+        {
+            0,1,2->//si tiene el numero 0,1 y 2
+            {
+                //se imprimira
+                println("aun eres un bebe")
+            }
+            3,4,5,6,7,8,9,10->//si tiene el numero de 3 a 10
+            {
+                //se imprimira
+                println("Eres un niño")
+            }
+        }
+        //----------------Ejemplo 2 Int con rango (IN)--------------
+        when(entero)
+        {
+            in 0..2->//si tiene el numero de 0 a 2
+            {
+                //se imprimira
+                println("Si tiene el numero")
+            }
+            in 3..99->//o si tiene el numero del 3 al 10
+            {
+                //se imprimira
+                println("si tiene el numero del 3 al 10, que es el $entero")
+            }
+            else->//de lo contrario
+            {
+                //imprimira
+                println("Ingrese una edad correcta")
+            }
+        }
+
+
+
     }
 }
